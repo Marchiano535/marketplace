@@ -23,6 +23,11 @@ Route::prefix('admin')->name('admin.')->group(function () {
 
 // Customer routes (requires auth)
 Route::middleware(['auth'])->group(function () {
+    // Dashboard redirect to marketplace for customers
+    Route::get('/dashboard', function () {
+        return redirect()->route('marketplace.index');
+    })->name('dashboard');
+    
     // Cart routes
     Route::prefix('cart')->name('customer.cart.')->group(function () {
         Route::get('/', [CartController::class, 'index'])->name('index');
