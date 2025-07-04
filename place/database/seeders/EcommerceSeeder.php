@@ -15,30 +15,8 @@ class EcommerceSeeder extends Seeder
      */
     public function run(): void
     {
-        // Create Super Admin
-        Admin::create([
-            'username' => 'superadmin',
-            'email' => 'superadmin@example.com',
-            'password' => Hash::make('password'),
-            'full_name' => 'Super Administrator',
-            'phone' => '081234567890',
-            'address' => 'Jakarta, Indonesia',
-            'role' => 'SUPER_ADMIN',
-            'status' => 'ACTIVE',
-        ]);
-
-        // Create Regular Admin
-        Admin::create([
-            'username' => 'admin',
-            'email' => 'admin@example.com',
-            'password' => Hash::make('password'),
-            'full_name' => 'Administrator',
-            'phone' => '081234567891',
-            'address' => 'Bandung, Indonesia',
-            'role' => 'ADMIN',
-            'status' => 'ACTIVE',
-        ]);
-
+        // Admin accounts are now created by AdminSeeder
+        
         // Create Customer Users
         User::create([
             'username' => 'customer1',

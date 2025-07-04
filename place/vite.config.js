@@ -14,5 +14,22 @@ export default defineConfig({
     ],
     server: {
         cors: true,
+        hmr: {
+            host: 'localhost',
+        },
+    },
+    build: {
+        chunkSizeWarningLimit: 1600,
+        rollupOptions: {
+            output: {
+                manualChunks: {
+                    vendor: ['alpinejs'],
+                    utils: ['axios']
+                }
+            }
+        }
+    },
+    esbuild: {
+        drop: ['console', 'debugger'],
     },
 });
